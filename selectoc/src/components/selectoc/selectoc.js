@@ -27,7 +27,9 @@ const Selectoc = ({ options, onChange, defaultValue }) => {
 
   return (
     <div ref={containerRef} className="container-selectoc">
-      <div onClick={() => setOpen(!open)}>{selected}</div>
+      <div className="selected" onClick={() => setOpen(!open)}>
+        {selected}
+      </div>
       {open && (
         <ul>
           {options.map((option) => (
