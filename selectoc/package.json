@@ -1,6 +1,6 @@
 {
   "name": "selectoc",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "main": "dist/selectoc.js",
   "peerDependencies": {
     "react": "^18.2.0",
