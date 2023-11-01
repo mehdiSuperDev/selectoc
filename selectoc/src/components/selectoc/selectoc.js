@@ -1,5 +1,7 @@
 import React, { useState, useRef } from "react";
 import "./selectoc.css";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 
 const Selectoc = ({ options, onChange, defaultValue }) => {
   const [open, setOpen] = useState(false);
@@ -26,9 +28,16 @@ const Selectoc = ({ options, onChange, defaultValue }) => {
   }, []);
 
   return (
-    <div ref={containerRef} className="container-selectoc">
-      <div className="selected" onClick={() => setOpen(!open)}>
+    <div
+      ref={containerRef}
+      className={`container-selectoc ${open ? "open" : ""}`}
+    >
+      <div onClick={() => setOpen(!open)}>
         {selected}
+        <FontAwesomeIcon
+          icon={open ? faChevronUp : faChevronDown}
+          style={{ marginLeft: "10px" }}
+        />
       </div>
       {open && (
         <ul>
