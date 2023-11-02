@@ -31,7 +31,7 @@ const Selectoc = ({ options, onChange, defaultValue, id, name }) => {
 
   return (
     <div ref={containerRef} className="container-selectoc">
-      <input type="hidden" id={id} name={name} value={selected} />
+      <input type="hidden" id={`${id}-input`} name={name} value={selected} />
       <div className="selected" onClick={() => setOpen(!open)}>
         {selected}
         {open && (
