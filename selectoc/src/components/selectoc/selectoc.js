@@ -1,12 +1,14 @@
 import React, { useState, useRef } from "react";
 import "./selectoc.css";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faChevronDown, faChevronUp } from "@fortawesome/free-solid-svg-icons";
 
 const Selectoc = ({ options, onChange, defaultValue }) => {
   const [open, setOpen] = useState(false);
   const [selected, setSelected] = useState(defaultValue || "");
   const containerRef = useRef(null);
+
+  React.useEffect(() => {
+    setSelected(defaultValue);
+  }, [defaultValue]);
 
   const handleOptionClick = (value) => {
     setSelected(value);
@@ -28,29 +30,22 @@ const Selectoc = ({ options, onChange, defaultValue }) => {
   }, []);
 
   return (
-    <div
-      ref={containerRef}
-      className={`container-selectoc ${open ? "open" : ""}`}
-    >
-      <div onClick={() => setOpen(!open)}>
+    <div ref={containerRef} className="container-selectoc">
+      <div className="selected" onClick={() => setOpen(!open)}>
         {selected}
-        <FontAwesomeIcon
-          icon={open ? faChevronUp : faChevronDown}
-          style={{ marginLeft: "10px" }}
-        />
+        {open && (
+          <ul>
+            {options.map((option) => (
+              <li
+                key={option.value}
+                onClick={() => handleOptionClick(option.value)}
+              >
+                {option.label}
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
-      {open && (
-        <ul>
-          {options.map((option) => (
-            <li
-              key={option.value}
-              onClick={() => handleOptionClick(option.value)}
-            >
-              {option.label}
-            </li>
-          ))}
-        </ul>
-      )}
     </div>
   );
 };
