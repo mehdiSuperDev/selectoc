@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import "./selectoc.css";
 
-const Selectoc = ({ options, onChange, defaultValue }) => {
+const Selectoc = ({ options, onChange, defaultValue, id, name }) => {
   const [open, setOpen] = useState(false);
   const [selected, setSelected] = useState(defaultValue || "");
   const containerRef = useRef(null);
@@ -31,6 +31,7 @@ const Selectoc = ({ options, onChange, defaultValue }) => {
 
   return (
     <div ref={containerRef} className="container-selectoc">
+      <input type="hidden" id={id} name={name} value={selected} />
       <div className="selected" onClick={() => setOpen(!open)}>
         {selected}
         {open && (
