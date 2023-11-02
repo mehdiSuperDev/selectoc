@@ -1,6 +1,15 @@
 {
   "name": "selectoc",
   "version": "0.1.6",
+  "description": "Composant Select inspiré du Select de Ant Design",
+  "keywords": [
+    "openclassroom",
+    "select",
+    "p14"
+  ],
+  "author": {
+    "name": "mehdi"
+  },
   "main": "dist/selectoc.js",
   "peerDependencies": {
     "react": "^18.2.0",
