@@ -2,6 +2,11 @@
 
 **Selectoc** is a dropdown component inspired by the Ant Design's Select component. It allows you to swiftly and efficiently set up an option selector for your React applications.
 
+## Prerequisites 📝
+
+- **Node.js:** v16.14.2 (or higher)
+- **Recommended Text Editor:** VS Code, Sublime Text, etc.
+
 ## Installation 🛠
 
 To install Selectoc, use npm:
@@ -46,7 +51,9 @@ export default App;
 ## Props
 
 **options:** An array of objects representing the options. Each object should have value and label keys.
+
 **onChange:** A callback function that's called when the selected value changes.
+
 **defaultValue:** The default value of the selector.
 
 **_Example_**
@@ -70,4 +77,4 @@ You'll see "Option 1" displayed by default, and the handleChange function will b
 **_License_**
 **MIT**
 
-**Author:** Mehdi
+**Author:** Mehdi R.
